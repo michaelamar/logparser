@@ -23,63 +23,128 @@ file.each do |x|
 	end
 end
 
-user_array=Array.new
 
 
-for i in (0..h.count)
-	user_array.push(h[i])
+range = 0 
+
+b=Array.new
+
+c=Array.new
+a=Array.new
+
+for i in 1..(h.length)
+	
+	s=h[i].to_a
+
+	s.each do
+		for j in range..range+2
+			c=s[j].to_a
+			b<<c
+		end
+		
+	range=range+1
+	end
 end
+
+puts b
+
+# if (h[i].nil? == false)
+	# 	s=h[i]
+	# 	s.each do |x|
+	# 		for i in range..range+2
+	#  			c=d[i].to_a
+	# 			b<<c
+	# 		 end
+	# 	 range=range+1
+	# 	end
+	# end
+
+# puts b
+# b.each do |x|
+# 	puts x
+# end
+
+
+
+
+
+# user_array=Array.new
+
+
+# for i in (0..h.count)
+# 	user_array.push(h[i])
+# end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # puts array[]
 # count = 0
 
-array2=Array.new
+# array2=Array.new
 
-count = 0
+# count = 0
 
-# user_array.each do |x|
-# 	if (x.nil? == false)
-# 		x.to_a
+# # user_array.each do |x|
+# # 	if (x.nil? == false)
+# # 		x.to_a
 		
-# 		x.each do |y|
-# 			array2<<y
-# 		end
-# 	end
-# 	count= count+1
-# end
-final_array=Array.new
+# # 		x.each do |y|
+# # 			array2<<y
+# # 		end
+# # 	end
+# # 	count= count+1
+# # end
+# final_array=Array.new
 
-user_array.each do |x|
-	a=Array.new([])
-	count=0
-	
-	if (x.nil? == false)
-		x.each do |y|
-			if count<3
-				a<<y
-			end
-			count=count+1
-		end
-	end
-	final_array<<a
-end
-
-
-final_array.each do |x|
-	puts x 
-	puts "new"
-end
-# final_array.each do |x|
-# 	x.each do |y|
-# 		puts y
-# 		puts "new"
-# 	end
-# end
 # user_array.each do |x|
+# 	a=Array.new([])
+# 	count=0
+	
 # 	if (x.nil? == false)
-# 		x.to_a
-# 		for i in (00..2)
-# 			array2.push(x[i])
+# 		x.each do |y|
+# 			if count<3
+# 				a<<y
+# 			end
+# 			count=count+1
 # 		end
 # 	end
+# 	final_array<<a
 # end
+
+
+# final_array.each do |x|
+# 	puts x 
+# 	puts "new"
+# end
+# # final_array.each do |x|
+# # 	x.each do |y|
+# # 		puts y
+# # 		puts "new"
+# # 	end
+# # end
+# # user_array.each do |x|
+# # 	if (x.nil? == false)
+# # 		x.to_a
+# # 		for i in (00..2)
+# # 			array2.push(x[i])
+# # 		end
+# # 	end
+# # end
 
