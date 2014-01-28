@@ -1,10 +1,11 @@
 range=0
 
 a=Hash.new
-a={1 => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k"]} #, 2 => ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p"] }
+a={1 => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k"], 2 => ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p"] , 3 => ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p"], 4 => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k"] }
 b=Array.new
 c=Array.new
-counter=0
+
+
 
 # d.each do |x|
 # 	for i in range..range+2
@@ -28,12 +29,17 @@ for i in (1..(a.length))
  		end
 	
 	end
-b<<c	
+
 end
+b<<c	
 
 
 
-	
+b.each do |x|
+
+	print x 
+
+end
 
 
 
