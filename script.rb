@@ -32,21 +32,90 @@ b=Array.new
 c=Array.new
 a=Array.new
 
-for i in 1..(h.length)
-	
-	s=h[i].to_a
 
-	s.each do
-		for j in range..range+2
-			c=s[j].to_a
-			b<<c
-		end
+
+ending=3
+hash={}
+
+
+	for i in (1..(h.length))
+		s=h[i] 
 		
-	range=range+1
+		
+		 x=0
+		 range=0
+
+		 if (s.nil? == false)
+		 	
+		 
+		 while (x <= s.length-ending)
+		 	pages =	s[range..range+2].join('-')
+
+			
+			if hash.has_key?(pages)
+		 		hash[pages]=hash[pages] + 1
+		 	else
+		 		hash[pages] = 1
+		 	end
+
+
+		 	x=x+1
+			
+			range = range+1		
+		 	end
 	end
 end
 
-puts b
+puts hash.sort_by{|k,v| v}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# for i in 1..(h.length)
+# 	s=h[i]
+# 	if (h[i].nil? == false)
+# 		s.each do |x|
+# 			if s.index(x)<s.length-2
+#  				c<<x.to_s
+#  				z = s.index(x)
+#  				z=z+1
+#  				c<<s[z].to_s
+#  				z=z+1
+#  				c<<s[z].to_s
+#  			end
+# 		end
+# 	end
+
+# end
+# b<<c	
+
+# b.each do |x|
+# 	puts x
+# end
 
 # if (h[i].nil? == false)
 	# 	s=h[i]

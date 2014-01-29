@@ -1,10 +1,10 @@
-range=0
+
 
 a=Hash.new
-a={1 => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k"], 2 => ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p"] , 3 => ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p"], 4 => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k"] }
+a={1 => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k"], 2 => ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p"] , 3 => ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p"], 4 => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k"], 5 => ["a", "b", "c"], 6 => ["a", "b", "c"], 7 => ["a", "b", "c"], 8 => ["a", "b", "c"], 9 => ["a", "b", "c"], 10 => ["a", "b", "c"], 11 => ["a", "b", "c"], 12 => ["a", "b", "c"], 13 => ["a", "b", "c"], 14 => ["a", "b", "c"]}
 b=Array.new
-c=Array.new
-
+c=String.new
+start=1
 
 
 # d.each do |x|
@@ -14,32 +14,42 @@ c=Array.new
 # 	end
 # 	range=range+1
 # end
+ending=3
+hash={}
 
-
-for i in (1..(a.length))
+for i in (start..(a.length))
 	s=a[i]
-	s.each do |x|
-		if s.index(x)<s.length-2
- 				c<<x.to_s
- 				z = s.index(x)
- 				z=z+1
- 				c<<s[z].to_s
- 				z=z+1
- 				c<<s[z].to_s
- 		end
-	
-	end
+	x=0
+	range=0
 
+
+	while (x <= s.length-ending)
+		pages =	s[range..range+2].join('-')
+
+		
+		if hash.has_key?(pages)
+			hash[pages]=hash[pages] + 1
+		else
+			hash[pages] = 1
+		end
+
+
+		x=x+1
+		
+		range = range+1		
+		end
 end
-b<<c	
+
+puts hash.sort
+# b<<c	
 
 
 
-b.each do |x|
+# b.each do |x|
 
-	print x 
+# 	print x 
 
-end
+# end
 
 
 
