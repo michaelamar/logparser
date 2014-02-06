@@ -8,15 +8,17 @@
 file = File.open("logfile.txt", "r") #r for read w for write
 
 h={}
-y=Array.new
 page_visited = Array.new
 
 file.each do |x|
-	line = x.split
-	user=line[0].to_i
-	page_visited= line[1].to_a
-	
-	if h.has_key?(user)
+		line = x.split
+		if (line[0].to_i > 0)
+			user=line[0].to_i
+			page_visited= Array(line[1])
+		end
+		
+		
+	if ((h.has_key?(user)) && (user.nil? == false))
 		h[user]<<page_visited 
 	else
 		h[user]=page_visited
@@ -25,12 +27,8 @@ end
 
 
 
-range = 0 
 
-b=Array.new
 
-c=Array.new
-a=Array.new
 
 
 
@@ -38,18 +36,18 @@ ending=3
 hash={}
 
 
-	for i in (1..(h.length))
-		s=h[i] 
+for i in (1..(h.length))
+	s=h[i] 
+	increment=2
 		
-		
-		 x=0
-		 range=0
+	x=0
+	range=0
 
-		 if (s.nil? == false)
-		 	
-		 
-		 while (x <= s.length-ending)
-		 	pages =	s[range..range+2].join('-')
+	if (s.nil? == false)
+	 	
+	 
+		while (x <= s.length-ending)
+		 	pages =	s[range..(range+increment)].join('-')
 
 			
 			if hash.has_key?(pages)
@@ -62,7 +60,7 @@ hash={}
 		 	x=x+1
 			
 			range = range+1		
-		 	end
+		end
 	end
 end
 
@@ -96,7 +94,14 @@ puts hash.sort_by{|k,v| v}
 
 
 # for i in 1..(h.length)
-# 	s=h[i]
+#
+# b=Array.new
+
+# c=Array.new
+# a=Array.new
+
+
+#  	s=h[i]
 # 	if (h[i].nil? == false)
 # 		s.each do |x|
 # 			if s.index(x)<s.length-2
