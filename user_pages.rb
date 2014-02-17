@@ -8,6 +8,9 @@ class UserPages
 		process_file(file)
 	end
 
+	def pages
+		@pages
+	end
 
 
 	private

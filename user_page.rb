@@ -17,7 +17,9 @@ class UserPage
 		@user
 	end
 
-	
+	def pages
+		@pages
+	end
 
 
 end

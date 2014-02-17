@@ -6,13 +6,13 @@ class Sequences
 	end
 
 	def count_sequences(ending, increment)
-		for i in (1..(@pages.length))
-			if (@pages[i].nil? == false)
-				s=@pages[i]
+		for i in (1..(@pages.pages.length))
+			if (@pages.pages[i].nil? == false)
+				s=@pages.pages[i]
 				x=0
 				range=0
-				while (x <= (s.length-ending))
-			 		pages =	s[range..(range+increment)].join('-')
+				while (x <= (s.pages.length-ending))
+			 		pages =	s.pages[range..(range+increment)].join('-')
 					
 					if @sequences.has_key?(pages)
 			 	 		@sequences[pages]=@sequences[pages] + 1
@@ -25,6 +25,18 @@ class Sequences
 			end
 		end
 	end
+
+
+	# def find_length_of_user_pages(pages)
+	# 	pages.length
+	# end
+
+
+	# def check_if_nil()
+		
+	# end
+
+
 
 
 	def print_out_answer
