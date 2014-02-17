@@ -14,7 +14,7 @@ file.each do |x|
 		line = x.split
 		if (line[0].to_i > 0)
 			user=line[0].to_i
-			page_visited= Array(line[1])
+			page_visited= line[1].to_a
 		end
 		
 		
