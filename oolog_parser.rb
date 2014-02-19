@@ -21,7 +21,7 @@ class Log_parser
 	
 	def create_second_hash
 		@pagez=Sequences.new(@user_pages)
-		@pagez.count_sequences(3,2)
+	 	@pagez.first_method
 	end
 
 
@@ -39,8 +39,6 @@ l.open("logfile.txt", "r")
 l.create_first_hash
 l.create_second_hash
 l.print_out_answer
-
-
 
 
 
