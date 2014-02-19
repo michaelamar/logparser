@@ -11,10 +11,16 @@ class Sequences
 		#print @pages
 		#print @pages.pages
 		# count_sequences()
+		first_method
+	end
+
+	def print_out_answer
+	 	print @sequences.sort_by!{|x| x.count}
 	end
 
 
 
+private
 
 	def first_method
 		for i in (1..(@pages.length))	
@@ -51,18 +57,5 @@ class Sequences
 		x=@sequences[position]
 		x.increment_count
 	end
-
-
-
-
-	def print_out_answer
-	 	print @sequences.sort_by!{|x| x.count}
-	end
-
-
-
-
-
-
 
 end

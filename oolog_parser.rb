@@ -21,7 +21,6 @@ class Log_parser
 	
 	def create_second_hash
 		@pagez=Sequences.new(@user_pages)
-	 	@pagez.first_method
 	end
 
 
